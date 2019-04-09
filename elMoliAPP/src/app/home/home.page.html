@@ -9,8 +9,26 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-   <ion-item *ngFor="let item of items | async">
-     {{item | json}}
-   </ion-item>
+<ion-content padding>
+  <!--   <ion-fab bottom right (click)="postNoticia()" >
+    <button ion-fab mini><ion-icon name="add" ></ion-icon></button>
+  </ion-fab> -->
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+
+  <ion-card *ngFor="let noti of noticias">
+    <img [src]="noti.img">
+    <ion-card-content>
+      <ion-card-title>
+        {{noti.titulo}}
+      </ion-card-title>
+      <p>
+        {{noti.contenido}}0
+      </p>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
