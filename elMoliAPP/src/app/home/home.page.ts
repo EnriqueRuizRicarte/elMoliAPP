@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { NavController } from '@ionic/angular';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { FirebaseFirestore } from '@angular/fire';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +11,10 @@ import { AngularFireDatabase } from '@angular/fire/database';
 })
 export class HomePage {
 
-  items: Observable<any[]>;
-  constructor(public navCtrl: NavController, public afDB: AngularFireDatabase) {
-    this.items = this.afDB.list('noticias').valueChanges();
+  items: any;
+  constructor(public navCtrl: NavController, public afDB:FirebaseFirestore) {
+     this.items = this.afDB.collection('noticias').get();
+     console.log(this.items);
   }
 
 }
