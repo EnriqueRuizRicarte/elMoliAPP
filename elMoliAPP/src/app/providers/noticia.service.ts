@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from "@angular/fire/firestore";
 import { Noticia } from '../home/noticia.model';
 import { Observable } from 'rxjs';
-import { HttpClient } from 'selenium-webdriver/http';
+import { HttpClient } from '../../../node_modules/@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ import { HttpClient } from 'selenium-webdriver/http';
 export class NoticiaService {
   private noticiasCollection: AngularFirestoreCollection<Noticia>;
   public noticias: Observable<Noticia[]>;
-  constructor(public http: HttpClient, private afDB: AngularFirestore) { 
+  constructor(private http: HttpClient, private afDB: AngularFirestore) { 
 
   }
 

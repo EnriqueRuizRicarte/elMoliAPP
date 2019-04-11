@@ -18,7 +18,7 @@ export class HomePage {
     this.getNoticias();
   }
 
-  doRefresh(event) {
+  /* doRefresh(event) {
     //INICIO DEL REFESH
     setTimeout(()=>{
       //Obtenemos las noticias de nuevo por si hay algun cambio
@@ -26,7 +26,7 @@ export class HomePage {
       //Fin del refresh
       event.complete();
     },1000);
-  }
+  } */
 
   getNoticias(){
     this._noticiaService.getNoticias().subscribe(

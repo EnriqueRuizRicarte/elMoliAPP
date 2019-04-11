@@ -14,11 +14,9 @@
     <button ion-fab mini><ion-icon name="add" ></ion-icon></button>
   </ion-fab> -->
 
-  <ion-refresher (ionRefresh)="doRefresh($event)">
+ <!--  <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-
-
+  </ion-refresher> -->
   <ion-card *ngFor="let noti of noticias">
     <img [src]="noti.img">
     <ion-card-content>
@@ -26,7 +24,7 @@
         {{noti.titulo}}
       </ion-card-title>
       <p>
-        {{noti.contenido}}0
+        {{noti.contenido}}
       </p>
     </ion-card-content>
   </ion-card>
