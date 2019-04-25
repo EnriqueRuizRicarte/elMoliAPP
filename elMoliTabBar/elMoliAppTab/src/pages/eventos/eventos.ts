@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { EventoProvider } from '../../providers/evento';
+import { Evento } from '../../modelos/evento.model';
 
 /**
  * Generated class for the EventosPage page.
@@ -15,7 +17,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EventosPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  eventos: Evento[];
+  constructor(public navCtrl: NavController, public navParams: NavParams,private _eventoService: EventoProvider) {
+    this.getEventos();
+  }
+
+  getEventos(){
+    this._eventoService.getAllEventos().subscribe(res =>{
+      this.eventos = res;
+    });
   }
 
   ionViewDidLoad() {

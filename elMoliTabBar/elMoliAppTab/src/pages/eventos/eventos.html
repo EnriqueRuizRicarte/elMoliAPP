@@ -11,5 +11,14 @@
 </ion-header>
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item *ngFor="let evento of eventos"> 
+      <ion-thumbnail item-start>
+        <img [src]="evento.img">
+      </ion-thumbnail>
+      <h2>{{evento.titulo}}</h2>
+      <p>{{evento.fecha}} • {{evento.hora}}</p>
+      <button ion-button clear item-end>Info</button>
+    </ion-item>
+  </ion-list>
 </ion-content>
