@@ -18,6 +18,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import {HttpClientModule} from "@angular/common/http";
 import { EventoProvider } from '../providers/evento';
+import { ListaProvider } from '../providers/lista';
+import { LoginPage } from '../pages/login/login';
 
 export const firebase = {
   apiKey: "AIzaSyBMD06uvsgPTd31LAUmHtMrPTAM3MdeuTY",
@@ -35,7 +37,8 @@ export const firebase = {
     TabsPage,
     GaleriaPage,
     EventosPage,
-    ListasPage
+    ListasPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ export const firebase = {
     AngularFireDatabase,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    EventoProvider
+    EventoProvider,
+    ListaProvider
     
   ]
 })
