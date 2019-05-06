@@ -4,8 +4,8 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card  *ngFor="let noticia of noticias">
+<ion-content >
+  <ion-card  *ngFor="let noticia of noticias" (click)="openNotice(noticia)">
     <img [src]="noticia.img">
     <ion-card-content>
       <ion-card-title>

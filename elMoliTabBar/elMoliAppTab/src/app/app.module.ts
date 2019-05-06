@@ -20,6 +20,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { EventoProvider } from '../providers/evento';
 import { ListaProvider } from '../providers/lista';
 import { LoginPage } from '../pages/login/login';
+import { VerNoticiaPage } from '../pages/ver-noticia/ver-noticia';
 
 export const firebase = {
   apiKey: "AIzaSyBMD06uvsgPTd31LAUmHtMrPTAM3MdeuTY",
@@ -38,7 +39,8 @@ export const firebase = {
     GaleriaPage,
     EventosPage,
     ListasPage,
-    LoginPage
+    LoginPage,
+    VerNoticiaPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ export const firebase = {
     TabsPage,
     GaleriaPage,
     EventosPage,
-    ListasPage
+    ListasPage,
+    VerNoticiaPage
   ],
   providers: [
     StatusBar,
