@@ -11,20 +11,27 @@
 </ion-header>
 
 <ion-content padding>
-  <!-- <ion-list>
-    <button ion-item *ngFor="let list of listas" (click)="listSelection(list)">
-      {{list.titulo}}
-      <ion-badge item-end>3</ion-badge>
-    </button>  
-  </ion-list> -->
   <ion-list>
-    <button ion-item >
-      Cena fiesta de abril
-      <ion-badge item-end>3</ion-badge>
-    </button> 
-    <button ion-item >
-      Merienda 24 de Mayo
-      <ion-badge item-end>23</ion-badge>
-    </button>
+    <!--  <ion-item-sliding *ngFor="let task of tasks; let i = index"> -->
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>Cena fiesta de Abril</ion-label>
+        <ion-badge item-end>3</ion-badge>
+      </ion-item>
+      <ion-item-options side="right" icon-left>
+        <button ion-button color="danger">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+       <!--  <button ion-button color="primary">
+          <ion-icon name="trash"></ion-icon>
+          Apuntarse
+        </button> -->
+        <button ion-button color="info">
+          <ion-icon name="eye"></ion-icon>
+          Info
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>
