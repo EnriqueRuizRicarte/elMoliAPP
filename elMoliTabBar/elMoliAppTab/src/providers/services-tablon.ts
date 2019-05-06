@@ -22,7 +22,7 @@ export class ServicesTablonProvider {
 
   getAllNoticias(){
     this.noticiasCollection = this.afBD.collection<Noticia>('noticias');
-    this.noticiass = this.noticiasCollection.valueChanges();
+    this.noticiass = this.noticiasCollection.valueChanges(); 
     return this.noticiass;
   }
 
