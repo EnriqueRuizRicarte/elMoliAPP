@@ -15,7 +15,7 @@
   <form #signInForm="ngForm" (submit)="signIn()">
     <ion-list>
       <ion-item>
-        <ion-label stacked>Correo electrónico</ion-label>
+        <ion-label stacked>Usuario</ion-label>
         <ion-input [(ngModel)]="userModel.email" type="email" autocorrect="off" autocapitalize="none" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
                    required></ion-input>
       </ion-item>
