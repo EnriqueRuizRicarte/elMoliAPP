@@ -58,7 +58,8 @@ export const firebase = {
     GaleriaPage,
     EventosPage,
     ListasPage,
-    VerNoticiaPage
+    VerNoticiaPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
