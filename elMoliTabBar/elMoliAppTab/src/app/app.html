@@ -1,1 +1,38 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+    <ion-content>
+        <ion-grid class="cuentaFondo">
+            <ion-row>
+                <ion-col col-12 class="cerrarSlide">
+                    <ion-icon name="close" menuToggle></ion-icon>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-12 class="userImg"><img src="../assets/imgs/user.jpg"></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-12 class="userName">Rut Navarro </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 class="menuItem">
+                    <ion-icon item-start name="home" color="darkGrey"></ion-icon>
+                    Tablón
+                </ion-col>
+                <ion-col col-12 class="menuItem">
+                    <ion-icon item-start name="images" color="darkGrey"></ion-icon>
+                    Galería
+                </ion-col>
+                <ion-col col-12 class="menuItem">
+                    <ion-icon item-start name="calendar" color="darkGrey"></ion-icon>
+                    Eventos
+                </ion-col>
+                <ion-col col-12 class="menuItem">
+                    <ion-icon item-start name="create" color="darkGrey"></ion-icon>
+                    Litas
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content></ion-nav>

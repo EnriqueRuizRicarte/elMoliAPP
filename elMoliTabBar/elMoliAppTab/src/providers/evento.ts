@@ -21,7 +21,7 @@ export class EventoProvider {
   }
 
   getAllEventos(){
-    this.eventosCollection = this.afBD.collection<Evento>('eventos');
+    this.eventosCollection = this.afBD.collection<Evento>('eventos',ref => ref.orderBy('id','desc'));
     this.events = this.eventosCollection.valueChanges();
     return this.events;
   }
