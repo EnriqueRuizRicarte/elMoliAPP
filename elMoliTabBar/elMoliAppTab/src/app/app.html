@@ -15,22 +15,22 @@
         </ion-grid>
         <ion-grid>
             <ion-row>
-                <ion-col col-12 class="menuItem">
-                    <ion-icon item-start name="home" color="darkGrey"></ion-icon>
-                    Tablón
+                <ion-col col-12 class="menuItem" *ngFor="let page of pages" (click)="abrirPagina(page)" menuToggle>
+                    <ion-icon item-start name="{{page.icono}}" color="darkGrey"></ion-icon>
+                    {{page.titulo}}
                 </ion-col>
-                <ion-col col-12 class="menuItem">
+                <!-- <ion-col col-12 class="menuItem" (click)="abrirPagina()">
                     <ion-icon item-start name="images" color="darkGrey"></ion-icon>
                     Galería
                 </ion-col>
-                <ion-col col-12 class="menuItem">
+                <ion-col col-12 class="menuItem" click)="abrirPagina()">
                     <ion-icon item-start name="calendar" color="darkGrey"></ion-icon>
                     Eventos
                 </ion-col>
-                <ion-col col-12 class="menuItem">
+                <ion-col col-12 class="menuItem" click)="abrirPagina()">
                     <ion-icon item-start name="create" color="darkGrey"></ion-icon>
                     Litas
-                </ion-col>
+                </ion-col> -->
             </ion-row>
         </ion-grid>
     </ion-content>
