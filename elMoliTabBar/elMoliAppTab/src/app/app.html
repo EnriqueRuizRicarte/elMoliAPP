@@ -25,10 +25,14 @@
                     <ion-icon item-start name="information-circle" color="darkGrey"></ion-icon>
                     Ayuda
                 </ion-col>
-                <ion-col col-6 class="menuItemFooter" menuToggle>
+                <ion-col col-6 class="menuItemFooter" menuToggle (click)="logOut()">
                     <ion-icon item-start name="log-out" color="darkGrey"></ion-icon>
                     Cerrar Sesion
                 </ion-col>
+<!--                 <ion-col col-6 class="menuItemFooter" menuToggle>
+                    <ion-icon item-start name="log-out" color="darkGrey"></ion-icon>
+                    Iniciar Sesion
+                </ion-col> -->
             </ion-row>
         </ion-grid>
     </ion-content>
