@@ -9,6 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
+<<<<<<< HEAD
 <ion-content>
     <ion-card class="welcome-card">
       <ion-img src="/assets/shapes.svg"></ion-img>
@@ -42,3 +43,26 @@
       </ion-item>
     </ion-list>
 </ion-content>
+=======
+<ion-content padding>
+  <!--   <ion-fab bottom right (click)="postNoticia()" >
+    <button ion-fab mini><ion-icon name="add" ></ion-icon></button>
+  </ion-fab> -->
+
+ <!--  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher> -->
+  <ion-card *ngFor="let noti of noticias">
+    <img [src]="noti.img">
+    <ion-card-content>
+      <ion-card-title>
+        {{noti.titulo}}
+      </ion-card-title>
+      <p>
+        {{noti.contenido}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+>>>>>>> tabBar

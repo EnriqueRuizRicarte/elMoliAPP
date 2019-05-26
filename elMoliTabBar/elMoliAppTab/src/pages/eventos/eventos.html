@@ -1,0 +1,30 @@
+<!--
+  Generated template for the EventosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar  color="primary">
+        <ion-buttons left>
+            <button icon-only ion-button menuToggle>
+              <ion-icon name="menu"></ion-icon>
+            </button>
+          </ion-buttons>
+      <ion-title>Fiestas y Eventos </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let evento of eventos"> 
+      <ion-thumbnail item-start>
+        <img [src]="evento.img">
+      </ion-thumbnail>
+      <h2>{{evento.titulo}}</h2>
+      <p>{{evento.fecha}} • {{evento.hora}}</p>
+      <button ion-button clear item-end>Info</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

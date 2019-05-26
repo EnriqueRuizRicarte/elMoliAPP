@@ -1,0 +1,59 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.cuentaFondo{
+    background-color: #454F63 ;
+    height: 30%;
+    border-bottom: 6px solid #A0DB5E;
+}
+.userName{
+    //text-align: center;
+    color: white;
+    font-size: 1.2em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-left: 10%;
+}
+.userImg img{
+    border-radius: 12px 12px 12px 12px;
+    width: 25%;
+    height: 90%;
+    //margin-left: 35%;
+    margin-left: 10%;
+    //margin-top: 10%;
+}
+.menuItem{
+    font-size: 1.2em;
+    margin-top:12%;
+    margin-left: 12%;
+}
+.menuItemFooter{
+    font-size:.9em;
+    //margin-top:12%;
+    //margin-left: 12%;
+}
+.footer{
+    margin-top:45%;
+    margin-bottom: 5%;
+    margin-left: 12%;
+}
+.cerrarSlide{
+    color:white;
+    font-size:1.5em;
+    margin-left: 90%;
+}

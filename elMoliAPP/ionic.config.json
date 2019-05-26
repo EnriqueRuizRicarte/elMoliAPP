@@ -1,5 +1,10 @@
 {
   "name": "elMoliAPP",
   "integrations": {},
+<<<<<<< HEAD
   "type": "angular"
+=======
+  "type": "angular",
+  "id": "52ecf032"
+>>>>>>> tabBar
 }
