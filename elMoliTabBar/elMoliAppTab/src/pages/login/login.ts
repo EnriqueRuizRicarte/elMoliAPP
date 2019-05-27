@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, AlertController, Events } from 'ionic-angular';
 import { UserModel } from '../../modelos/user.model';
 import { AuthProvider } from '../../providers/auth';
 import { TabsPage } from '../tabs/tabs';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the LoginPage page.
@@ -20,7 +21,8 @@ export class LoginPage {
 
   userModel: UserModel;
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public lodingCtrl: LoadingController, public alertCtrl: AlertController, public authProvier: AuthProvider) {
+    public lodingCtrl: LoadingController, public alertCtrl: AlertController, public authProvier: AuthProvider,
+    public eventLogin: Events) {
 
     this.userModel = new UserModel();
   }
@@ -31,8 +33,9 @@ export class LoginPage {
     loading.present();
 
     this.authProvier.signInWithEmailAndPassword(this.userModel).then(result => {
+      this.eventLogin.publish('user:login');
       loading.dismiss();
-      this.navCtrl.setRoot(TabsPage);
+      this.navCtrl.setRoot(HomePage);
     }).catch(err => {
       loading.dismiss();
       console.log(err);

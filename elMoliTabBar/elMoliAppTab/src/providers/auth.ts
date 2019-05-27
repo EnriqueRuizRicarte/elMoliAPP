@@ -6,6 +6,8 @@ import { User } from 'firebase';
 import { Clientes } from '../modelos/clientes';
 import firebase from 'firebase';
 import { UserModel } from '../modelos/user.model';
+import { Observable } from 'rxjs';
+import { Persona } from '../modelos/persona.model';
 
 /*
   Generated class for the AuthProvider provider.
@@ -21,6 +23,7 @@ export class AuthProvider {
   
   constructor(public http: HttpClient, public angularFireAuth: AngularFireAuth, private afBD: AngularFirestore) {
     console.log('Hello AuthProvider Provider');
+
     angularFireAuth.authState.subscribe((user: User) => {
       this.user = user;
     });
@@ -35,7 +38,14 @@ export class AuthProvider {
       }
     });
   }
-
+getUsuario(): any{
+  firebase.auth().onAuthStateChanged(res => {
+    return res;
+  },
+  err => {
+    throw new Error(err.message);
+  });
+}
   signInWithEmailAndPassword(userModel: UserModel): Promise<any>{
     return this.angularFireAuth.auth.signInWithEmailAndPassword(userModel.email, userModel.password);
   }

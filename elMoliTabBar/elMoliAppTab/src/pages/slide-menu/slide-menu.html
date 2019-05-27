@@ -10,34 +10,30 @@
                 <ion-col col-12 class="userImg"><img src="../assets/imgs/user.jpg"></ion-col>
             </ion-row>
             <ion-row>
-                <ion-col *ngIf="usuario" col-12 class="userName">{{usuario.nombre}}</ion-col>
-                <ion-col *ngIf="!usuario" col-12 class="userName">Iniciar Sesion</ion-col>
+                <ion-col col-12 class="userName">Rut Navarro</ion-col>
             </ion-row>
         </ion-grid>
         <ion-grid>
-            <ion-row *ngIf="usuario">
+            <ion-row>
                 <ion-col col-12 class="menuItem" *ngFor="let page of pages" (click)="abrirPagina(page)" menuToggle>
                     <ion-icon item-start name="{{page.icono}}" color="darkGrey"></ion-icon>
                     {{page.titulo}}
                 </ion-col>
             </ion-row>
-            <ion-row>
-                <ion-col col-12 class="menuItem" *ngIf=!usuario (click)="goToLogin()" menuToggle>
-                    <ion-icon item-start name="cog" color="darkGrey"></ion-icon>
-                    Iniciar Sesion
-                </ion-col>
-            </ion-row>
             <ion-row class="footer">
-                <ion-col col-6 class="menuItemFooter" menuToggle *ngIf="usuario">
+                <ion-col col-6 class="menuItemFooter" menuToggle>
                     <ion-icon item-start name="information-circle" color="darkGrey"></ion-icon>
                     Ayuda
                 </ion-col>
-                <ion-col col-6 class="menuItemFooter" menuToggle (click)="logOut()" *ngIf="usuario">
+                <ion-col col-6 class="menuItemFooter" menuToggle (click)="logOut()">
                     <ion-icon item-start name="log-out" color="darkGrey"></ion-icon>
                     Cerrar Sesion
                 </ion-col>
+<!--                 <ion-col col-6 class="menuItemFooter" menuToggle>
+                    <ion-icon item-start name="log-out" color="darkGrey"></ion-icon>
+                    Iniciar Sesion
+                </ion-col> -->
             </ion-row>
         </ion-grid>
     </ion-content>
 </ion-menu>
-<ion-nav [root]="rootPage" #content></ion-nav>
