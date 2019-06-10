@@ -52,14 +52,44 @@ export class MyApp implements OnInit, OnDestroy {
       let user: UserModel = new UserModel();
       user.email = localStorage.getItem('emailCredentials');
       user.password = localStorage.getItem('passCredentials');
-      console.log(user); 
-      if (user){
+      console.log(user);
+      if (user) {
+        console.log('Login con localStorage');
         this.auth_.signInWithEmailAndPassword(user);
       }
     }
-
-    //this.presentLoading();
+    this.getUsuario();
     this.rootPage = HomePage;
+  }
+
+
+  abrirPagina(page: any) {
+    this.nav.setRoot(page.componente);
+  }
+
+  logOut() {
+    this.auth_.signOut().then(res => {
+      this.presentLoading("Cerrando sesion...");
+      this.usuario = null;
+      //this.nav.setRoot(LoginPage);
+    });
+
+  }
+
+  presentLoading(text: string) {
+    const loader = this.loadingCtrl.create({
+      content: text,
+      duration: 2000
+    });
+    loader.present().then(succes => {
+      this.rootPage = HomePage;
+    });
+  }
+
+  goToLogin() {
+    this.nav.push(LoginPage);
+  }
+  getUsuario() {
     if (this.auth_.getAuthenticated()) {
       this.auth_.angularFireAuth.user.subscribe(res => {
         console.log(res);
@@ -70,6 +100,11 @@ export class MyApp implements OnInit, OnDestroy {
         this.usuario.uid = res.uid;
       });
     }
+  }
+
+  loadApp() {
+    this.rootPage = HomePage;
+    /*
     this.eventLogin.subscribe('user:login', () => {
       this.auth_.angularFireAuth.user.subscribe(res => {
         console.log(res);
@@ -80,29 +115,6 @@ export class MyApp implements OnInit, OnDestroy {
         this.usuario.uid = res.uid;
       });
     });
+    */
   }
-  abrirPagina(page: any) {
-    this.nav.setRoot(page.componente);
-  }
-  logOut() {
-    this.auth_.signOut().then(res => {
-      this.presentLoading("Cerrando sesion...");
-      this.usuario = null;
-      //this.nav.setRoot(LoginPage);
-    });
-
-  }
-  presentLoading(text: string) {
-    const loader = this.loadingCtrl.create({
-      content: text,
-      duration: 2000
-    });
-    loader.present().then(succes => {
-      this.rootPage = HomePage;
-    });
-  }
-  goToLogin() {
-    this.nav.push(LoginPage);
-  }
-
 }
