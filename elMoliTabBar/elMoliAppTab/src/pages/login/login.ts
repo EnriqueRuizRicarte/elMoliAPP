@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, AlertController, Events } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, AlertController, Events, Platform } from 'ionic-angular';
 import { UserModel } from '../../modelos/user.model';
 import { AuthProvider } from '../../providers/auth';
 import { TabsPage } from '../tabs/tabs';
 import { HomePage } from '../home/home';
+import { NativeStorage } from '@ionic-native/native-storage';
+
 
 /**
  * Generated class for the LoginPage page.
@@ -22,7 +24,7 @@ export class LoginPage {
   userModel: UserModel;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public lodingCtrl: LoadingController, public alertCtrl: AlertController, public authProvier: AuthProvider,
-    public eventLogin: Events) {
+    public eventLogin: Events, public nativeStorage: NativeStorage, public platform: Platform) {
 
     this.userModel = new UserModel();
   }
@@ -33,7 +35,14 @@ export class LoginPage {
     loading.present();
 
     this.authProvier.signInWithEmailAndPassword(this.userModel).then(result => {
-      console.log(this.userModel);      
+      console.log(this.userModel);
+      if (this.platform.is('cordova')) {
+        this.nativeStorage.setItem('credentials',this.userModel);
+      }else {
+        localStorage.setItem('emailCredentials',this.userModel.email);
+        localStorage.setItem('passCredentials',this.userModel.password);
+      }
+      
       this.eventLogin.publish('user:login');
       loading.dismiss();
       this.navCtrl.setRoot(HomePage);

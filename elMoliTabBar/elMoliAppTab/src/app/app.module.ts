@@ -27,6 +27,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/da
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import {HttpClientModule} from "@angular/common/http";
 import { TutorialPage } from '../pages/tutorial/tutorial';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 export const firebase = {
   apiKey: "AIzaSyBMD06uvsgPTd31LAUmHtMrPTAM3MdeuTY",
@@ -78,7 +79,8 @@ export const firebase = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     EventoProvider,
     ListaProvider,
-    AuthProvider
+    AuthProvider,
+    NativeStorage
     
   ]
 })
