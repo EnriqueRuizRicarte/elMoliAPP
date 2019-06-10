@@ -33,6 +33,7 @@ export class LoginPage {
     loading.present();
 
     this.authProvier.signInWithEmailAndPassword(this.userModel).then(result => {
+      console.log(this.userModel);      
       this.eventLogin.publish('user:login');
       loading.dismiss();
       this.navCtrl.setRoot(HomePage);

@@ -1,5 +1,7 @@
 {
   "name": "elMoliAppTab",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
